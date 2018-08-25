@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:id="@+id/header">
+
+        <Button
+            style="?android:buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonHalt"
+            android:layout_weight="1"
+            android:text="Halt"
+            android:textSize="50sp"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <SurfaceView
+        android:layout_width="@dimen/lineNoWidth"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@+id/footer"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footerHeight"
+        android:orientation="vertical"
+        android:id="@+id/footer"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/consoleSlider"
+            android:background="@android:color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="@color/footer">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:layout_weight="1"
+                android:overScrollMode="never">
+
+                <TextView
+                    android:id="@+id/consoleRun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp">
+                </TextView>
+            </ScrollView>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:layout_weight="1"
+                android:overScrollMode="never">
+
+                <TextView
+                    android:id="@+id/consoleDebug"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp">
+                </TextView>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@android:style/TextAppearance.DeviceDefault"
+                android:layout_width="@dimen/lineNoWidth"
+                android:layout_height="wrap_content"
+                android:id="@+id/codeNumbers"
+                android:textSize="18sp"
+                android:text="0"
+                android:textAlignment="viewEnd"
+                android:paddingRight="5dp"
+                android:layout_marginRight="5dp">
+
+            </TextView>
+
+            <TextView
+                style="@android:style/TextAppearance.DeviceDefault"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/codeEditor"
+                android:textSize="18sp"
+                android:padding="0dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

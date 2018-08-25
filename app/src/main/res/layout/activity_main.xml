@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <View
+        android:layout_width="@dimen/lineNoWidth"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeNumbers"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:layout_alignParentStart="true"
+        android:background="@color/codeLineNumbers" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:overScrollMode="never"
+        android:fillViewport="false">
+
+        <com.vinzga.scratchbasic.Code.CodeEditor
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/codeEditor">
+
+        </com.vinzga.scratchbasic.Code.CodeEditor>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:id="@+id/header">
+
+        <Button
+            style="?android:buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonRun"
+            android:background="@android:color/white"
+            android:layout_weight="1"
+            android:text="Run"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+        <Button
+            style="?android:buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDebug"
+            android:background="@android:color/white"
+            android:layout_weight="1"
+            android:text="Debug"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/footer"
+        android:layout_alignParentBottom="true"
+        android:background="@color/footer"
+        android:padding="20dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/GUIPredicateButtonContainer"
+            android:columnCount="4">
+
+        </GridLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
