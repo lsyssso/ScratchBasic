@@ -2,7 +2,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="lineNoWidth">100px</dimen>
     <dimen name="GUIPredicateHeight">50dp</dimen>
-    <dimen name="GUIPropositionArgMinWidth">50dp</dimen>
+    <dimen name="GUIPropositionArgMinWidth">100dp</dimen>
     <dimen name="lineOfCodeHeight">50dp</dimen>
     <dimen name="footerHeight">140dp</dimen>
 </resources>

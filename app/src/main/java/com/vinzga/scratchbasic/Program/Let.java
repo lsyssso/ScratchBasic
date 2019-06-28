@@ -19,23 +19,29 @@ public class Let extends AbStatement {
             //In this case, call calculate() to assign the result of operation to the variable
             {
                 calculate(m);
-            } else {
+            }
+            else
+            {
                 //in this case it means, it's assigning a variable with single value, update the variable value in dictionary
+
                 Integer i = Integer.parseInt(slicedStatement[1]);
-                if( i == null) {
-                    m.getVariables().put(slicedStatement[1], m.returnValue(slicedStatement[3]));
-                }
-                else
-                {
-                    m.getConsole().setText(m.getConsole().getText() + slicedStatement[1] + " is not a proper name for variable");
-                }
+                m.getConsole().setText(m.getConsole().getText() + slicedStatement[1] + " is not a proper name for variable");
+
             }
         }
-        catch(KeyNotFoundException e)
-        //trying to find a variable value but get nothing
-        //means the variable does not exist
+        catch(NumberFormatException n)
         {
-            m.getConsole().setText(m.getConsole().getText() + e.getMessage());
+            try
+            {
+                m.getVariables().put(slicedStatement[1], m.returnValue(slicedStatement[3]));
+            }
+
+            catch(KeyNotFoundException e)
+            //trying to find a variable value but get nothing
+            //means the variable does not exist
+            {
+                m.getConsole().setText(m.getConsole().getText() + e.getMessage());
+            }
         }
     }
 

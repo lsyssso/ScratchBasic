@@ -77,10 +77,15 @@ public class GUIProposition extends LinearLayout {
                 Spinner arg = new Spinner(context);
                 arg.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
                 arg.setMinimumWidth(getResources().getDimensionPixelSize(R.dimen.GUIPropositionArgMinWidth));
-
-                List<CharSequence> spinnerArray = new ArrayList<>();
+//                String[] arraySpinner = new String[] {
+//                        "x", "y", "z", "a", "b", "c", "d"
+//                };
+//                List<CharSequence> spinnerArray = new ArrayList<>();
+//                spinnerArray.add("x");
+//                spinnerArray.add("y");
+//                spinnerArray.add("z");
                 ArrayAdapter<CharSequence> adapter = new ArrayAdapter<> (
-                        context, android.R.layout.simple_spinner_item, spinnerArray);
+                        context, android.R.layout.simple_spinner_item, CodeEditor.variables);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 arg.setAdapter(adapter);
